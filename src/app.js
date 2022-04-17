@@ -116,9 +116,6 @@ const populate = (id, values, index = 0) => {
     if (index >= values.length) return false
 
     data[id] = values[index]
-
-    render()
-
     if (!solve()) {
         return populate(id, values, index = 1)
     }
@@ -135,7 +132,6 @@ const findCorrectValue = (id, values) => {
 window.stop = false
 
 const solve = () => {
-    console.count('Solve')
     const emptyIds = getEmptyBlocks()
 
     if (emptyIds.length === 0) return true
@@ -169,6 +165,6 @@ window.solve = solve
 window.addEventListener('load', initializeTable)
 document.getElementById('btnStart').addEventListener('click', function () {
     clearData()
-    console.countReset('Solve')
     solve()
+    render()
 })
