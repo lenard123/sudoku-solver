@@ -5,7 +5,7 @@
     <title>Sudoku Solver</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
-    <script src="./src/app.js" type="module"></script>
+    <script src="./src/main.js" type="module"></script>
 </head>
 <body>
 
@@ -13,7 +13,22 @@
 
 </table>
 
-<button id='btnStart'>START</button>
-
+<form id='form'>
+    <div>
+        <label>Speed: </label>
+        <input type="number" name="speed" placeholder="milliseconds">
+    </div>
+    <div>
+        <label>Randomize: </label>
+        <span>
+            <input type="radio" name="random" value="1" min="0" selected>Yes
+        </span>
+        <span>
+            <input type="radio" name="random" value="0">No
+        </span>
+    </div>
+    <button type="button" id='stop' style="display: none;">Pause</button>
+    <button type="submit">START</button>
+</form>
 </body>
 </html>
